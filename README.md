@@ -24,3 +24,29 @@ Bring it along to your next crayfish party and elevate your snaps singing experi
 3. **Lyrics View & Details**:
 
 - Clear, readable display of lyrics tailored for quick reading during celebrations.
+
+# User flow
+
+Start screen
+↓
+Start drinking!
+↓
+Random song selected
+↓
+Song + Lyrics
+↓
+Next song
+↓
+Another unused song
+↓
+...
+↓
+All songs have been displayed
+↓
+"Drunk already?"
+↓
+Back to start
+↓
+Start screen
+
+The user can also press Back to start at any time during the session.
