@@ -27,7 +27,7 @@ Bring it along to your next crayfish party and elevate your snaps singing experi
 
 # User flow
 
-Start screen
+`Start screen
 ↓
 Start drinking!
 ↓
@@ -47,6 +47,6 @@ All songs have been displayed
 ↓
 Back to start
 ↓
-Start screen
+Start screen`
 
 The user can also press Back to start at any time during the session.
