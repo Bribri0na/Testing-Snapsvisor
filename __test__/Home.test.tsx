@@ -1,8 +1,17 @@
 import { fireEvent, render, screen, within } from "@testing-library/react";
 import Home from "@/app/page";
 import { songList } from "@/app/data/songlist";
+import { shuffleSongs } from "@/app/utils/shuffleSongs";
+
+jest.mock("@/app/utils/shuffleSongs", () => ({
+  shuffleSongs: jest.fn(),
+}));
 
 describe("Top page has contents", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   test("Thats home renders with an H2 and specific text", () => {
     render(<Home />);
     const pageTitle = screen.getByRole("heading", {
@@ -19,6 +28,46 @@ describe("Top page has contents", () => {
   });
 
   //From the start button//
+
+  test("song list are shuffled once when Start button is clicked", () => {
+    const shuffleMock = jest.mocked(shuffleSongs);
+
+    shuffleMock.mockReturnValue(songList);
+
+    render(<Home />);
+    expect(shuffleMock).not.toHaveBeenCalled();
+
+    const startButton = screen.getByRole("button", {
+      name: /Start drinking!/i,
+    });
+
+    fireEvent.click(startButton);
+
+    expect(shuffleMock).toHaveBeenCalledTimes(1);
+    expect(shuffleMock).toHaveBeenCalledWith(songList);
+  });
+
+  test("song list are not shuffled when Next button is clicked", () => {
+    const shuffleMock = jest.mocked(shuffleSongs);
+    render(<Home />);
+
+    expect(shuffleMock).not.toHaveBeenCalled();
+
+    const startButton = screen.getByRole("button", {
+      name: /Start drinking!/i,
+    });
+
+    fireEvent.click(startButton);
+
+    expect(shuffleMock).toHaveBeenCalledTimes(1);
+
+    const nextButton = screen.getByTestId("next_button");
+
+    fireEvent.click(nextButton);
+
+    expect(shuffleMock).toHaveBeenCalledTimes(1);
+  });
+
   test("The user can go to the first song page from start button", () => {
     render(<Home />);
     const startButton = screen.getByRole("button", {
