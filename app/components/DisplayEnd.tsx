@@ -10,7 +10,7 @@ export default function DisplayEnd({ restart }: DisplayEndProps){
         <h2>All song are done!</h2>
         <p>Drunk already?</p>
         <Image
-        src="drunk-crayfish.jpg"
+        src="drunk_crayfish.jpg"
         alt="A drunk crayfish"
         width={300}
         height={300}
