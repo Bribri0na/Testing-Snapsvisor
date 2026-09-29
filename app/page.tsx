@@ -58,18 +58,23 @@ return(
         selectedMenu={selectSong}
         />
 
-        <main>
+        <main className="flex-1">
             {page === "start" && (
-                <section>
-                    <h2>Ready for some snaps?</h2>
+                <section className="mx-auto flex max-w-xl flex-col items-center gap-4 px-4 py-8text-centr md:py-12">
                     <Image
                     data-testid="home-image"
                     src="/crayfish.jpg"
                     alt="A crayfish"
                     width={400}
                     height={400}
-                     />
-                     <button onClick={startDrinking}>Start drinking!</button>
+                    className="h-auto w-full max-w-md"
+                    />
+                     <h2 className="font-heading text-3xl md:text-5xl">Ready for some snaps?</h2>
+                     <p className="font-heading text-xl md:text-2xl">Let the singing begin!</p>
+                     <button onClick={startDrinking}
+                     className="mt-6 w-full max-w-xs rounded-full bg-snaps-red px-8 py-4 font-heading text-xl text-white transition hover:brightness-110">
+                        Start drinking!
+                    </button>
                 </section>
             )}
 
