@@ -7,7 +7,7 @@ export default function Header({ handleMenu,restart }: HeaderProps){
     return(
         <header>
             <button
-            data-testid="men-button"
+            data-testid="menu-button"
             aria-label="Open menu"
             onClick={handleMenu}>
                 ☰

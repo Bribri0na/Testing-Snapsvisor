@@ -14,9 +14,9 @@ export default function Menu({ handleClose, selectedMenu, isOpen }: MenuProps){
     return(
         <aside
         data-testid="sidebar"
-        aria-hidden={isOpen ? "false" :true}
-        className={ `fixed top-0 left-0 h-fll w-73 bg-white p-6 shadow-lg trandition-transform ${
-            isOpen ? "trandlate-x-0" : "-translate-x-full"
+        aria-hidden={isOpen ? "false" :"true"}
+        className={ `fixed top-0 left-0 h-full w-73 bg-white p-6 shadow-lg trandition-transform ${
+            isOpen ? "translate-x-0" : "-translate-x-full"
         }`}>
             <button onClick={handleClose}>Close</button>
 

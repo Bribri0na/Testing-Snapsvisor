@@ -23,7 +23,7 @@ export default function DisplaySong({
         <section>
             {!isFromMenu && (
                 <p data-testid="song_number">
-                    {SongIndex + 1}/{thisSongList.length}
+                    {SongIndex + 1} / {thisSongList.length}
                 </p>
             )}
 
